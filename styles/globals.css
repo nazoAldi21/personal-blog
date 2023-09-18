@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+  --bg-light: #FFFFFF;
+  --bg-dark: #313866;
+  --text-light: #313866;
+  --text-dark: #FFFFFF;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 0, 0, 0;
+    --background-start-rgb: 255, 255, 255;
+    --background-end-rgb: 255, 255, 255;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+.bg-light-background {
+  background-color: #ffffff;
+}
+
+.text-light-text {
+  color: #212121;
+}
+
+.bg-dark-background {
+  background-color: #000000;
+}
+
+.text-dark-text {
+  color: #ffffff;
+}
+
+.border-dark {
+  border-top-color: #313866;
+}
+
+.input-dark-bg {
+  border: 1px solid #737373;
+  background: transparent;
+}
+
+.input-light-bg {
+  border: 1px solid #d4d4d4;
+  background: transparent;
+}
+
+.button-dark-search {
+  background-color: #0f172a;
+  color: #ffffff;
+}
+
+.button-light-search {
+  background-color: #e5e7eb;
+  color: #9ca3af;
+}
+
+.searcbar {
+  position: fixed;
+  top: -10px;
+  z-index: 9999;
+  left: 308px;
+}
