@@ -1,6 +1,6 @@
 import { GraphQLClient } from 'graphql-request';
 
-const endpoint = 'https://api-ap-northeast-1.hygraph.com/v2/clk8e2ic11d9s01t21nryhevl/master';
+const endpoint = process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT;
 
 const graphQLClient = new GraphQLClient(endpoint);
 
