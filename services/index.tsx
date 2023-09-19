@@ -1,6 +1,6 @@
 import { GraphQLClient } from 'graphql-request';
 
-const endpoint = process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT;
+const endpoint: any = process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT;
 
 const graphQLClient = new GraphQLClient(endpoint);
 
@@ -35,7 +35,7 @@ export const getPosts = async () => {
     }
   `;
 
-  const data = await graphQLClient.request(query);
+  const data: any = await graphQLClient.request(query);
   return data.postsConnection.edges.map((edge: any) => edge.node);
 };
 
@@ -53,7 +53,7 @@ export const getCategories = async () => {
     }
   `;
 
-  const data = await graphQLClient.request(query);
+  const data: any = await graphQLClient.request(query);
   return data.categoriesConnection.edges.map((edge: any) => edge.node);
 };
 
@@ -89,7 +89,7 @@ export const getPostBySlug = async (slug: string) => {
     slug,
   };
 
-  const data = await graphQLClient.request(query, variables);
+  const data: any = await graphQLClient.request(query, variables);
   return data.post;
 };
 
@@ -129,6 +129,6 @@ export const getCategoryPost = async (slug: string) => {
     slug,
   };
 
-  const data = await graphQLClient.request(query, variables);
+  const data: any = await graphQLClient.request(query, variables);
   return data.postsConnection.edges.map((edge: any) => edge.node);
 };

@@ -35,7 +35,7 @@ const CategoryPage: React.FC = () => {
 export const getStaticPaths: GetStaticPaths = async () => {
   const posts = await getCategories();
 
-  const paths = posts.map((post) => ({
+  const paths = posts.map((post : any) => ({
     params: { slug: post.slug },
   }));
 
