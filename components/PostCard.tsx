@@ -28,6 +28,7 @@ interface PostCardProps {
     content: {
       text: string;
     }[];
+    viewcount: number;
   };
 }
 
@@ -36,13 +37,17 @@ const PostCard: React.FC<PostCardProps> = ({ post }) => {
   return (
     <div className="w-1/4 flex flex-col mx-4">
       <Link href={`/posts/${post.slug}`}>
-        <div className="rounded-[28px] shadow-lg">
+        <div className="rounded-[28px] shadow-lg relative">
           <Image
             src={post.featuredImage.url}
             alt={post.title}
             width={300}
             height={262}
           />
+          <p className={`flex flex-row justify-between text-xs font-normal text-${theme}-text p-2 absolute bottom-0 right-0 gap-1 bg-black`}>
+            <span>{post.viewcount}</span>
+            views
+          </p>
         </div>
       </Link>
       <div className="py-4">

@@ -7,7 +7,7 @@ const graphQLClient = new GraphQLClient(endpoint);
 export const getPosts = async () => {
   const query = `
     query MyQuery {
-      postsConnection {
+      postsConnection(orderBy: viewcount_DESC) {
         edges {
           node {
             author {
@@ -29,6 +29,7 @@ export const getPosts = async () => {
               name
               slug
             }
+            viewcount
           }
         }
       }
